@@ -13,8 +13,6 @@ body{
     justify-content: center;
     background: url("Ashesi\ University\ Campus.jpg");
 }
-
-
 .container{
     position: relative;
     max-width: 600px;
@@ -25,48 +23,16 @@ body{
     background-color: #fff;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1);
 }
-.container header{
-    position: relative;
-    font-size: 20px;
-    font-weight: 600;
-    color: #333;
-}
-.container header::before{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -2px;
-    height: 3px;
-    width: 27px;
-    border-radius: 8px;
-    background-color: #d83208;
-}
 .container form{
     position: relative;
     margin-top: 16px;
-    min-height: 490px;
+    min-height: 300px;
     background-color: #fff;
     overflow: hidden;
 }
 .container form .form{
-    position: absolute;
     background-color: #fff;
     transition: 0.3s ease;
-}
-.container form .form.second{
-    opacity: 0;
-    pointer-events: none;
-    transform: translateX(100%);
-}
-form.secActive .form.second{
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateX(0);
-}
-form.secActive .form.first{
-    opacity: 0;
-    pointer-events: none;
-    transform: translateX(-100%);
 }
 .container form .title{
     display: block;
@@ -75,6 +41,54 @@ form.secActive .form.first{
     font-weight: 500;
     margin: 6px 0;
     color: #333;
+}
+.tab-header {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee;
+}
+.tab {
+    padding: 10px 30px;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: 600;
+    color: #888;
+    position: relative;
+    transition: color 0.2s;
+}
+.tab.active {
+    color: #d83208;
+}
+.tab.active::after {
+    content: "";
+    display: block;
+    height: 3px;
+    background: #d83208;
+    border-radius: 8px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -2px;
+}
+#registrationForm,
+#loginForm {
+    display: none;
+}
+#registrationForm.active,
+#loginForm.active {
+    display: block;
+}
+.switch-text {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 14px;
+}
+.highlight {
+    color: #d83208;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: underline;
 }
 .container form .fields{
     display: flex;
@@ -115,7 +129,7 @@ form .fields .input-field{
 .input-field input[type="date"]:valid{
     color: #333;
 }
-.container form button, .backBtn{
+.container form button{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -128,7 +142,6 @@ form .fields .input-field{
     border-radius: 5px;
     margin: 25px 0;
     background-color: #d53a0f;
-    transition: all 0.3s linear;
     cursor: pointer;
 }
 .container form .btnText{
@@ -137,20 +150,6 @@ form .fields .input-field{
 }
 form button:hover{
     background-color: #e7330f;
-}
-form button i,
-form .backBtn i{
-    margin: 0 6px;
-}
-form .backBtn i{
-    transform: rotate(180deg);
-}
-form .buttons{
-    display: flex;
-    align-items: center;
-}
-form .buttons button , .backBtn{
-    margin-right: 14px;
 }
 
 @media (max-width: 750px) {
